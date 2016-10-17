@@ -1,24 +1,26 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.8.+'
+        classpath 'com.android.tools.build:gradle:2.2.1'
     }
 }
-apply plugin: 'android-library'
+
+apply plugin: 'com.android.library'
 
 repositories {
     mavenCentral()
 }
 
 android {
-    compileSdkVersion project.hasProperty("compileSdkVersion") ? rootProject.compileSdkVersion : 19
-    buildToolsVersion project.hasProperty("buildToolsVersion") ? rootProject.buildToolsVersion : '19.0.1'
+    compileSdkVersion project.hasProperty("compileSdkVersion") ? rootProject.compileSdkVersion : 24
+    buildToolsVersion project.hasProperty("buildToolsVersion") ? rootProject.buildToolsVersion : '24.0.2'
 
     defaultConfig {
         minSdkVersion    project.hasProperty("minSdkVersion") ? rootProject.minSdkVersion : 7
-        targetSdkVersion project.hasProperty("targetSdkVersion") ? rootProject.targetSdkVersion : 19
+        targetSdkVersion project.hasProperty("targetSdkVersion") ? rootProject.targetSdkVersion : 24
     }
 
     sourceSets {
@@ -35,5 +37,5 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:appcompat-v7:24.2+'
 }
